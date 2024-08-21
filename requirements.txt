@@ -24,8 +24,6 @@ pyinstaller==6.2.0
 pyinstaller-hooks-contrib==2023.10
 PyMsgBox==1.0.9
 pynput==1.7.6
-pyperclip==1.8.2
-pypiwin32==223
 PyRect==0.2.0
 pyscreenshot==3.1
 PyScreeze==0.1.29
