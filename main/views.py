@@ -13,13 +13,13 @@ def getAudio(request):
     if request.method == "POST":
         try:
             LINK = request.POST['link']
-            cartella_main = path.join(BASE_DIR, 'main/')
+            cartella_tmp = path.join(BASE_DIR, 'tmp/')
 
-            if not path.exists(cartella_main + 'audio'):
+            if not path.exists(cartella_tmp + 'audio'):
                 # Crea la cartella
-                makedirs(cartella_main + 'audio')
+                makedirs(cartella_tmp + 'audio')
 
-            cartella_audio = path.join(BASE_DIR, 'main/audio/')
+            cartella_audio = path.join(BASE_DIR, 'tmp/audio/')
 
             #Rimozione file audio esistenti (per non intasare il server)
             if listdir(cartella_audio) != []:
