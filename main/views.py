@@ -28,7 +28,6 @@ def getAudio(request):
             
             #Creazione oggetto del video YT
             yt = YouTube(LINK)
-            title = yt.title
 
             #Selezione stream con abr=128kbps
             itag = None
@@ -42,7 +41,7 @@ def getAudio(request):
 
             #Rinominazione (cambio di formato) in .mp3
             vecchio_percorso = path.join(cartella_audio, f"{downloaded_file}")
-            nuovo_percorso = path.join(cartella_audio, f"{title}.mp3")
+            nuovo_percorso = path.join(cartella_audio, f"nuovo.mp3")
 
             rename(vecchio_percorso, nuovo_percorso)
 
