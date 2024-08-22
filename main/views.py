@@ -14,7 +14,7 @@ def getAudio(request):
         try:
             LINK = request.POST['link']
 
-            cartella_audio = BASE_DIR / '/main/audio/'
+            cartella_audio = BASE_DIR / 'main/audio/'
 
             print(cartella_audio)
 
