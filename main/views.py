@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .pytubefix.__main__ import YouTube
+from pytubefix import YouTube
 from os import path, listdir, remove, rename, makedirs
 from pathlib import Path
 from django.http import FileResponse
