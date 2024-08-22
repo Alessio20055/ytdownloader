@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .pytubefix import YouTube
-from .pytubefix.exceptions import RegexMatchError
+import .pytubefix as pf
 from os import path, listdir, remove, rename, makedirs
 from pathlib import Path
 from django.http import FileResponse
@@ -27,7 +26,7 @@ def getAudio(request):
                     remove(cartella_audio + x)
             
             #Creazione oggetto del video YT
-            yt = YouTube(LINK)
+            yt = pf.YouTube(LINK)
 
             #Selezione stream con abr=128kbps
             itag = None
@@ -52,8 +51,6 @@ def getAudio(request):
             response['Content-Disposition'] = f"inline; filename={title}.mp3"
             return response
             
-        except RegexMatchError:
-            return redirect('error')
 
         except Exception as e:
             print("ERRORE:", e)
