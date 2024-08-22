@@ -26,7 +26,7 @@ def getAudio(request):
                     remove(cartella_audio + x)
             
             #Creazione oggetto del video YT
-            yt = YouTube(LINK)
+            yt = YouTube(LINK, use_oauth=False, allow_oauth_cache=False)
 
             #Selezione stream con abr=128kbps
             itag = None
