@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-import .pytubefix as pf
+from .pytubefix.__main__ import YouTube
 from os import path, listdir, remove, rename, makedirs
 from pathlib import Path
 from django.http import FileResponse
@@ -26,7 +26,7 @@ def getAudio(request):
                     remove(cartella_audio + x)
             
             #Creazione oggetto del video YT
-            yt = pf.YouTube(LINK)
+            yt = YouTube(LINK)
 
             #Selezione stream con abr=128kbps
             itag = None
